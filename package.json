@@ -45,7 +45,7 @@
         "build:win32": "run-s compile package:win32",
         "build:linux": "run-s compile package:linux",
         "build:macos": "run-s compile package:macos",
-        "build": "sh -c 'if [ \"$(run-s env:os)\" == \"win32\" ]; then run-s compile \"package -- --icon=src/img/icon.ico ${*}\"; else run-s compile \"package -- --icon=src/img/icon.icns ${*}\" ; fi' --",
+        "build": "sh -c 'if [ \"$(run-s env:os)\" == \"win32\" ]; then run-s compile \"package -- --icon=src/img/icon.ico ${*}\"; else run-s compile \"package -- --icon=$out/src/img/icon.icns ${*}\" ; fi' --",
         "env:os": "node -e \"console.log(process.platform)\""
     },
     "babel": {
@@ -64,7 +64,7 @@
         "core-js": "^3.23.5",
         "cross-env": "^7.0.3",
         "css-loader": "^3.6.0",
-        "electron": "^11.5.0",
+        "electron": "^27.0.0",
         "electron-packager": "15.4.0",
         "eslint": "^8.20.0",
         "eslint-config-prettier": "^8.5.0",
